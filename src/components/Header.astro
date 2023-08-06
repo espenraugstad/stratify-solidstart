@@ -14,6 +14,7 @@ import ModeButton from "./ModeButton.jsx";
 </nav>
 
 <style lang="scss">
+  @import url("../styles/global.scss");
   nav {
     display: flex;
     align-items: center;
@@ -22,14 +23,19 @@ import ModeButton from "./ModeButton.jsx";
     width: 100%;
     height: 80px;
     margin: 0 auto;
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
   }
 
   .menu {
     display: flex;
     align-items: center;
     font-weight: 500;
+
     div {
-      margin: 0 1rem;   
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
     }
   }
 </style>

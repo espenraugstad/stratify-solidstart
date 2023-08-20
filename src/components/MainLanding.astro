@@ -1,0 +1,74 @@
+---
+import LoginButton from "./LoginButton";
+---
+
+<main>
+  <h1>Welcome</h1>
+  <p>
+    A Spotify utility tool to merge, create and populate multiple playlists at
+    once!
+  </p>
+  <LoginButton client:load />
+</main>
+
+<style lang="scss">
+  @import url("../styles/global.scss");
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+  }
+  p {
+    margin: 0.75rem;
+  }
+</style>
+
+<script>
+  const cid = "79aab9b8746344ebb0edb4367327f0fb";
+  const redir = "http://localhost:3000/";
+  //const redir = "https://stratify-app.com/";
+
+  window.onload = async () => {
+    // Check to see if this is a redirect after a PKCE code challenge
+    const urlParams = new URLSearchParams(window.location.search);
+    let code = urlParams.get("code");
+    if (code) {
+      await requestAccessToken(code);
+    }
+  };
+
+  async function requestAccessToken(code) {
+    let codeVerifier = localStorage.getItem("code_verifier");
+
+    let body = new URLSearchParams({
+      grant_type: "authorization_code",
+      code: code,
+      redirect_uri: redir,
+      client_id: cid,
+      code_verifier: codeVerifier,
+    });
+
+    const response = fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: body,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("HTTP status " + response.status);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        localStorage.setItem("access_token", data.access_token);
+        location.href = "home.html";
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+</script>

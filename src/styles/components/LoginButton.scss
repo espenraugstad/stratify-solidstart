@@ -1,0 +1,19 @@
+@import url("../global.scss");
+
+button{
+    width: 12.5rem;
+    height: 3.5rem;
+    font-size: 0.875rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+button:hover{
+    filter: brightness(130%);
+}

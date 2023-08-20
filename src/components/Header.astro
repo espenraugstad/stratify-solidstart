@@ -1,16 +1,41 @@
 ---
-
+import HeaderLogo from "./HeaderLogo.astro";
+import ModeButton from "./ModeButton.jsx";
 ---
 
 <nav>
-    <div class="logo">Logo</div>
+  <HeaderLogo />
 
-    <div class="menu">Menu</div>
+  <div class="menu">
+    <div><ModeButton client:load /></div>
+    <div>Pages</div>
+    <div>User</div>
+  </div>
 </nav>
 
 <style lang="scss">
-    nav{
-        display: flex;
-        width: 100%;
+  @import url("../styles/global.scss");
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    /* background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant); */
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+
+    div {
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
     }
+  }
 </style>

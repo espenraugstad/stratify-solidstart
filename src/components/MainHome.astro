@@ -1,10 +1,15 @@
+---
+import MenuCard from "./MenuCard.astro";
+---
+
 <main>
   <h1>Menu</h1>
   <p>What do you want to do today?</p>
   <div class="menu">
-    <div class="menu-item">Merge Playlists</div>
-    <div class="menu-item">Delete Playlists</div>
-    <div class="menu-item">Add songs to playlist</div>
+    <MenuCard title="Merge Playlists" icon="merge" />
+    <MenuCard title="Delete Playlists" icon="delete" />
+    <!-- <div class="menu-item">Delete Playlists</div>
+    <div class="menu-item">Add songs to playlist</div> -->
   </div>
 </main>
 
@@ -19,5 +24,11 @@
   }
   p {
     margin: 0.75rem;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 </style>

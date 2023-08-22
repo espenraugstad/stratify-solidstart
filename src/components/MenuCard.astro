@@ -1,0 +1,28 @@
+---
+const { title, icon } = Astro.props;
+---
+
+<div class="item">
+  <span class="material-symbols-outlined">{icon}</span>
+  {title}
+</div>
+
+<style lang="scss">
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    cursor: pointer;
+
+    span {
+      margin-bottom: 1rem;
+      font-size: 3rem;
+    }
+  }
+</style>

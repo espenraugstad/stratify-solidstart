@@ -5,6 +5,82 @@ import Footer from "../components/Footer.astro";
 ---
 <Layout title="Stratify">
     <Header />
-    <h1>Merge playlists</h1>
+    <main>
+        <h1>Merge Playlists</h1>
+        <h2>Click on the playlists you want to merge</h2>
+        <div id="options">
+            <div><span>0</span> selected</div>
+            <div>
+                <label for="showSelected">Only show selected</label>
+                <input type="checkbox" name="showSelected" id="showSelected">
+            </div>
+        </div>
+        <button>Next</button>
+        <div id="search">
+            <label for="searchPlaylists">Search Playlists</label>
+            <input type="text" name="searchPlaylists" id="searchPlaylists">
+        </div>
+        <div>
+            Playlists are coming!
+        </div>
+    </main>
     <Footer />
   </Layout>
+
+  <style lang="scss">
+    @import url("../styles/global.scss");
+    main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 160px);
+  }
+  p {
+    margin: 0.75rem;
+  }
+
+  button{
+    width: 12.5rem;
+    height: 3.5rem;
+    font-size: 0.875rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+button:hover{
+    filter: brightness(130%);
+}
+
+  #options{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    div{
+        margin: 1rem;
+    }
+  }
+
+  #search{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    input{
+        margin: .125rem;
+        height: 2rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid var(--md-sys-color-outline);
+    }
+  }
+  </style>

@@ -1,0 +1,3 @@
+GET https://api.spotify.com/v1/me/playlists
+content-type: "application/json"
+Authorization: `Bearer BQAsUjpMsezzo8BWJods2QjaAO7-RP7FDmLfDusOCsNcAslhq02NHFPtN27qTo_GtTkRbERxxb__PRvzeZTD92a-nFFcMTmxpLSDYlejytggjvFgWJnkiAfS43Z0Qydw0ffsed_jrwwgcSWxmM_IlOHUkBky82kzgQxDDDpJo7N952FSli803B75S7FL1JvL8N8nGypakCOIBGDffNpHa65199MTu1kyNvqqL5PVaWzDkAccdPOIlYk`,

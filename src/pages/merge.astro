@@ -2,34 +2,35 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import SolidAllPlaylists from "../components/SolidAllPlaylists";
 ---
-<Layout title="Stratify">
-    <Header />
-    <main>
-        <h1>Merge Playlists</h1>
-        <h2>Click on the playlists you want to merge</h2>
-        <div id="options">
-            <div><span>0</span> selected</div>
-            <div>
-                <label for="showSelected">Only show selected</label>
-                <input type="checkbox" name="showSelected" id="showSelected">
-            </div>
-        </div>
-        <button>Next</button>
-        <div id="search">
-            <label for="searchPlaylists">Search Playlists</label>
-            <input type="text" name="searchPlaylists" id="searchPlaylists">
-        </div>
-        <div>
-            Playlists are coming!
-        </div>
-    </main>
-    <Footer />
-  </Layout>
 
-  <style lang="scss">
-    @import url("../styles/global.scss");
-    main {
+<Layout title="Stratify">
+  <Header />
+  <main>
+    <h1>Merge Playlists</h1>
+    <h2>Click on the playlists you want to merge</h2>
+    <div id="options">
+      <div><span>0</span> selected</div>
+      <div>
+        <label for="showSelected">Only show selected</label>
+        <input type="checkbox" name="showSelected" id="showSelected" />
+      </div>
+    </div>
+    <button>Next</button>
+    <div id="search">
+      <label for="searchPlaylists">Search Playlists</label>
+      <input type="text" name="searchPlaylists" id="searchPlaylists" />
+    </div>
+    <div>Playlists are coming!</div>
+    <SolidAllPlaylists client:load/>
+  </main>
+  <Footer />
+</Layout>
+
+<style lang="scss">
+  @import url("../styles/global.scss");
+  main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +41,7 @@ import Footer from "../components/Footer.astro";
     margin: 0.75rem;
   }
 
-  button{
+  button {
     width: 12.5rem;
     height: 3.5rem;
     font-size: 0.875rem;
@@ -52,35 +53,35 @@ import Footer from "../components/Footer.astro";
     border: none;
     border-radius: 3rem;
     cursor: pointer;
-}
+  }
 
-button:hover{
+  button:hover {
     filter: brightness(130%);
-}
+  }
 
-  #options{
+  #options {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
 
-    div{
-        margin: 1rem;
+    div {
+      margin: 1rem;
     }
   }
 
-  #search{
+  #search {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-    input{
-        margin: .125rem;
-        height: 2rem;
-        padding: 1rem;
-        border-radius: 1rem;
-        border: 1px solid var(--md-sys-color-outline);
+    input {
+      margin: 0.125rem;
+      height: 2rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid var(--md-sys-color-outline);
     }
   }
-  </style>
+</style>
